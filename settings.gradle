@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "OCSOrange"
 include ':app'
+include ':core'

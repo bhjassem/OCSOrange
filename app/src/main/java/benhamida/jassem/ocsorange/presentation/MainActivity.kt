@@ -1,7 +1,8 @@
-package benhamida.jassem.ocsorange
+package benhamida.jassem.ocsorange.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import benhamida.jassem.ocsorange.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
