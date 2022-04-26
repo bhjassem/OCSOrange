@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/searchProgramFragment">
+
+    <fragment
+        android:id="@+id/searchProgramFragment"
+        android:name="benhamida.jassem.ocsorange.ui.search_program.SearchProgramFragment"
+        android:label="fragment_search_program"
+        tools:layout="@layout/fragment_search_program" >
+        <action
+            android:id="@+id/actionGoToDetails"
+            app:destination="@id/programDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/programDetailsFragment"
+        android:name="benhamida.jassem.ocsorange.ui.program_details.ProgramDetailsFragment"
+        android:label="fragment_program_details"
+        tools:layout="@layout/fragment_program_details" >
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="subtitle"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="fullscreenimageurl"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="detaillink"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>
