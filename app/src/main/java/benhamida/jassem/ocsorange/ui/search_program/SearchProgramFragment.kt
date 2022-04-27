@@ -45,7 +45,6 @@ class SearchProgramFragment : Fragment(), ProgramsListAdapter.OnClickListener {
 
     private fun setupUI() {
         programs_list_rv.layoutManager = GridLayoutManager(requireContext(), 2)
-        programs_list_rv.setHasFixedSize(true)
         adapter = ProgramsListAdapter(arrayListOf(), this)
         programs_list_rv.adapter = adapter
     }
