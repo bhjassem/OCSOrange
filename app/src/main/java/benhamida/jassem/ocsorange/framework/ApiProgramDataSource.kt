@@ -1,15 +1,9 @@
 package benhamida.jassem.ocsorange.framework
 
-import android.util.Log
 import benhamida.jassem.core.data.Program
 import benhamida.jassem.core.data.ProgramDetails
-import benhamida.jassem.core.data.ProgramDetailsDTO
-import benhamida.jassem.core.data.ProgramSearchDTO
 import benhamida.jassem.core.repository.ProgramDataSource
 import benhamida.jassem.ocsorange.framework.api.ProgramApi
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import javax.inject.Inject
 
 class ApiProgramDataSource @Inject constructor(private val programApi: ProgramApi): ProgramDataSource {

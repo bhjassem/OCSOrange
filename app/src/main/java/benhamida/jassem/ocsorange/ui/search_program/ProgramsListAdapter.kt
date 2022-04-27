@@ -11,7 +11,8 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_program.view.*
 
 class ProgramsListAdapter(
-    private var albums: List<Program>
+    private var programs: List<Program>,
+    private val onClickListener: OnClickListener
 ) : RecyclerView.Adapter<ProgramsListAdapter.DataViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -22,25 +23,33 @@ class ProgramsListAdapter(
             )
         )
 
-    override fun getItemCount(): Int = albums.size
+    override fun getItemCount(): Int = programs.size
 
-    override fun onBindViewHolder(holder: DataViewHolder, position: Int) =
-        holder.bind(albums.get(position))
+    override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
+        holder.itemView.setOnClickListener {
+            onClickListener.onItemClickListener(programs.get(position))
+        }
+        return holder.bind(programs.get(position))
+    }
 
     fun setData(list: List<Program>?) {
-        albums = list as ArrayList<Program>
+        programs = list as ArrayList<Program>
         notifyDataSetChanged()
     }
 
     inner class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(program: Program) {
             program.title?.let {
-                if(it.size>0)
+                if(!it.isNullOrEmpty())
                     itemView.program_title.setText(program.title[0].value?:"")
             }
             Glide.with(itemView.program_img.context)
                 .load(Constants.IMAGES_BASE_URL + program.imageurl)
                 .into(itemView.program_img)
         }
+    }
+
+    interface OnClickListener {
+        fun onItemClickListener(program: Program)
     }
 }

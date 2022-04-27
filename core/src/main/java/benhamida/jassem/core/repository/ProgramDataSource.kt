@@ -5,5 +5,5 @@ import benhamida.jassem.core.data.ProgramDetails
 
 interface ProgramDataSource {
     suspend fun search(title: String): List<Program>
-    suspend fun getDetails(id: String): ProgramDetails
+    suspend fun getDetails(detailLink: String): ProgramDetails
 }
