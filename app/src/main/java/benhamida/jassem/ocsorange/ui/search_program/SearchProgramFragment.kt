@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import benhamida.jassem.core.data.Program
 import benhamida.jassem.ocsorange.R
@@ -43,14 +44,9 @@ class SearchProgramFragment : Fragment(), ProgramsListAdapter.OnClickListener {
     }
 
     private fun setupUI() {
-        programs_list_rv.layoutManager = LinearLayoutManager(requireContext())
+        programs_list_rv.layoutManager = GridLayoutManager(requireContext(), 2)
+        programs_list_rv.setHasFixedSize(true)
         adapter = ProgramsListAdapter(arrayListOf(), this)
-        programs_list_rv.addItemDecoration(
-            DividerItemDecoration(
-                programs_list_rv.context,
-                (programs_list_rv.layoutManager as LinearLayoutManager).orientation
-            )
-        )
         programs_list_rv.adapter = adapter
     }
 

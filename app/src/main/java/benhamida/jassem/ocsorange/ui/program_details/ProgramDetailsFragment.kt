@@ -42,6 +42,7 @@ class ProgramDetailsFragment : Fragment() {
         program_subtitle.setText(args.subtitle)
         Glide.with(program_img.context)
             .load(Constants.IMAGES_BASE_URL + args.fullscreenimageurl)
+            .placeholder(R.drawable.default_img)
             .into(program_img)
         //Looking for program details
         args.detaillink?.let {

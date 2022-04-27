@@ -43,8 +43,12 @@ class ProgramsListAdapter(
                 if(!it.isNullOrEmpty())
                     itemView.program_title.setText(program.title[0].value?:"")
             }
+            program.subtitle?.let {
+                    itemView.program_subtitle.setText(program.subtitle)
+            }
             Glide.with(itemView.program_img.context)
                 .load(Constants.IMAGES_BASE_URL + program.imageurl)
+                .placeholder(R.drawable.default_img)
                 .into(itemView.program_img)
         }
     }
