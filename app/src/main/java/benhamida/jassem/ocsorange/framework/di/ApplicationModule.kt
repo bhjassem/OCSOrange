@@ -23,7 +23,6 @@ class ApplicationModule {
     @Provides
     @Singleton
     fun provideProgramApi() = ApiClient.createApiService()
-    //fun provideProgramApi() = ApiClient.client.create(ProgramApi::class.java)
 
     @Provides
     @Singleton

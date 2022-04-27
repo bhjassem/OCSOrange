@@ -18,8 +18,6 @@ object ApiClient {
         OkHttpClient.Builder().build()
     }
 
-
-
     private val retrofit : Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(Constants.API_BASE_URL)
@@ -29,25 +27,4 @@ object ApiClient {
     }
 
     fun createApiService() = retrofit.create(ProgramApi::class.java)
-
-    /*
-    val client: Retrofit
-        get() {
-            val httpClient = OkHttpClient.Builder()
-            httpClient.addInterceptor { chain ->
-                val original = chain.request()
-                val request = original.newBuilder()
-                    .method(original.method(), original.body())
-                    .build()
-                chain.proceed(request)
-            }
-            httpClient.build()
-            val client = httpClient.build()
-            val gson = GsonBuilder().setLenient().create()
-            return Retrofit.Builder()
-                .baseUrl(Constants.API_BASE_URL)
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create(gson))
-                .build()
-        }*/
 }

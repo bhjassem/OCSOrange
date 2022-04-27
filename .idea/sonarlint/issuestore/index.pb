@@ -17,3 +17,27 @@ o
 ?core/src/main/java/benhamida/jassem/core/data/ProgramDetails.kt,0\3\031991d19ea892ed9dd454f19140ec9a22578c55
 h
 8core/src/main/java/benhamida/jassem/core/data/Program.kt,2\a\2aefa3350768953d7d86db4dbf6c852153860667
+o
+?app/src/main/java/benhamida/jassem/ocsorange/ui/MainActivity.kt,0\4\04131551c5917bb52b951a524680313b864c92f1
+‰
+Yapp/src/main/java/benhamida/jassem/ocsorange/ui/program_details/ProgramDetailsFragment.kt,7\3\73fa28c25ce19c383bd952e22e2f89a79e4d7c6d
+r
+Bapp/src/main/java/benhamida/jassem/ocsorange/framework/UseCases.kt,4\9\49f0d8b94625ce1ef32d2865adff9268d4a26998
+~
+Napp/src/main/java/benhamida/jassem/ocsorange/framework/di/ApplicationModule.kt,e\3\e3f1f605a3993e328f3bd0d5654a8eb5d2bb7ac8
+x
+Happ/src/main/java/benhamida/jassem/ocsorange/framework/api/ProgramApi.kt,9\0\90551a8a5ca4e69f001b1e7185d743252c568bc7
+~
+Napp/src/main/java/benhamida/jassem/ocsorange/framework/ApiProgramDataSource.kt,c\8\c891dafd2cf2bbee700a5abd98fafb462c8b6796
+i
+9app/src/main/java/benhamida/jassem/ocsorange/Constants.kt,9\8\98878c3d1ede4c1b6d096553c1ffcd4cf9e6d761
+…
+Uapp/src/main/java/benhamida/jassem/ocsorange/ui/search_program/ProgramsListAdapter.kt,a\f\af4e2b02296474ff1ab061e1597ce2b0303420d4
+ˆ
+Xapp/src/main/java/benhamida/jassem/ocsorange/ui/search_program/SearchProgramViewModel.kt,a\5\a59d81769f5cee4c7423ed8036d3e90cb2510bdd
+‡
+Wapp/src/main/java/benhamida/jassem/ocsorange/ui/search_program/SearchProgramFragment.kt,e\a\ea5ad1acd6f3de33241d5d448c22753a554c1c5a
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+w
+Gapp/src/main/java/benhamida/jassem/ocsorange/framework/api/ApiClient.kt,4\8\483d9f3c8784f31c5abb632549c25f7fbbe4c87b

@@ -1,7 +1,6 @@
 package benhamida.jassem.ocsorange.ui.search_program
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,12 +9,13 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import benhamida.jassem.core.data.Program
 import benhamida.jassem.ocsorange.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_search_program.*
 
 @AndroidEntryPoint
-class SearchProgramFragment : Fragment() {
+class SearchProgramFragment : Fragment(), ProgramsListAdapter.OnClickListener {
 
     private val viewModel: SearchProgramViewModel by viewModels()
     private lateinit var adapter: ProgramsListAdapter
@@ -35,17 +35,16 @@ class SearchProgramFragment : Fragment() {
             showProgressBar()
             viewModel.searchProgram(search_program_et.text.toString())
         }
-        //search_program_btn.setOnClickListener { goToProgramDetails("title", "sub", "url", "dlink") }
     }
 
-    private fun goToProgramDetails(title: String, subtitle: String, fullscreenimageurl: String, detailLink: String) {
+    private fun goToProgramDetails(title: String?, subtitle: String?, fullscreenimageurl: String?, detailLink: String?) {
         val action = SearchProgramFragmentDirections.actionGoToDetails(title, subtitle, fullscreenimageurl, detailLink)
         Navigation.findNavController(programs_list_rv).navigate(action)
     }
 
     private fun setupUI() {
         programs_list_rv.layoutManager = LinearLayoutManager(requireContext())
-        adapter = ProgramsListAdapter(arrayListOf())
+        adapter = ProgramsListAdapter(arrayListOf(), this)
         programs_list_rv.addItemDecoration(
             DividerItemDecoration(
                 programs_list_rv.context,
@@ -63,17 +62,21 @@ class SearchProgramFragment : Fragment() {
     }
 
     private fun showProgressBar() {
-        Log.e("SearchProgramFragment", "showProgressBar")
         progressBar.visibility = View.VISIBLE
         search_program_btn.isEnabled = false
         search_program_et.isEnabled = false
     }
 
     private fun hideProgressBar() {
-        Log.e("SearchProgramFragment", "hideProgressBar")
         progressBar.visibility = View.INVISIBLE
         search_program_btn.isEnabled = true
         search_program_et.isEnabled = true
+    }
+
+    override fun onItemClickListener(program: Program) {
+        if (!program.title.isNullOrEmpty()) {
+            goToProgramDetails(program.title.get(0).value, program.subtitle, program.fullscreenimageurl, program.detaillink)
+        }
     }
 
 }
