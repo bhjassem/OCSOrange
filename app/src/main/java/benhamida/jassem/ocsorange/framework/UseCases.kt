@@ -1,9 +1,9 @@
 package benhamida.jassem.ocsorange.framework
 
-import benhamida.jassem.core.usecase.GetProgramDetails
-import benhamida.jassem.core.usecase.SearchProgram
+import benhamida.jassem.core.usecase.GetProgramDetailsUseCase
+import benhamida.jassem.core.usecase.SearchProgramUseCase
 
 data class UseCases(
-    val searchProgram: SearchProgram,
-    val getProgramDetails: GetProgramDetails
+    val searchProgramUseCase: SearchProgramUseCase,
+    val getProgramDetailsUseCase: GetProgramDetailsUseCase
 )

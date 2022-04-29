@@ -17,7 +17,7 @@ class SearchProgramViewModel @Inject constructor(private val useCases: UseCases)
 
     fun searchProgram(title: String) {
         GlobalScope.launch(Dispatchers.IO) {
-            var programs = useCases.searchProgram.invoke("title=$title")
+            var programs = useCases.searchProgramUseCase.invoke("title=$title")
             programsList?.postValue(programs)
         }
     }
